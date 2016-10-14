@@ -1,2 +1,2 @@
 # SystemcExamples
-This repository will contain many modules(components) to be used as basic components to design a large project
+This repository contains modules(components) to be used as basic cells to design a large project
