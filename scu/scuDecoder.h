@@ -1,7 +1,7 @@
 /**
-@file dLatch.h Definition of Generic Decoders
-@brief Definition of UseFull Generic Decoders for fast development
-@author Ronald Sulbaran
+@file scuDecoder.h
+@brief Generic N-to-M decoder cells (`Decoder`, `DecoderEnable`).
+@author Ronald Sulbarán
 @date December 2012
 @mail ronalanto03@gmail.com
 */

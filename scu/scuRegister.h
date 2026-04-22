@@ -1,7 +1,8 @@
 /**
-@file scuDLatch.h Latch definitions
-@brief Definition of diferent kinds of latch register
-@author Ronald Sulbaran
+@file scuRegister.h
+@brief Edge-sensitive register cells: `Register`, `RegisterEnable`,
+       `RegisterReset`, `RegisterEnableReset`.
+@author Ronald Sulbarán
 @date December 2012
 @mail ronalanto03@gmail.com
 */
@@ -26,24 +27,24 @@ SCU_BEGIN_NAMESPACE
 @brief clocked Register with enable and reset input.
 this register read when clock input is equal to 1 and write when clock input is equal to 0.
 
-when reset input equal to 1 and clock input equal to 0 RegisterEnableReset change it's state to 0 and other inputs doesnt matter.
+when reset input equal to 1 and clock input equal to 0 RegisterEnableReset change it's state to 0 and other inputs does not matter.
 when enable input equal to 0 and clock equal to 0 RegisterEnableReset keep the state
- and when enable input is equal to 1 and clock input is equal to 0 RegegisterEnableReset change to x_in.
+ and when enable input is equal to 1 and clock input is equal to 0 RegisterEnableReset change to x_in.
 
-@author Ronald Sulbaran
+@author Ronald Sulbarán
 @mail ronalanto03@gmail.com
 @date December 2012
 */
 
 template < typename dataType ,bool zero=false>
-///dataType is de DataType of the latch
+///dataType is the data type carried by the cell
 ///if zero=true => this is a Zero Latch
 ///if zero=false => this is a normal latch
 
 class RegisterEnableReset:public sc_module{
 	public:
 
-		///Clock port for sincronization
+		///Clock port for synchronization
 		sc_in_clk clk_in;
 		///enable input port
 		sc_in<bool> en_in;
@@ -53,7 +54,7 @@ class RegisterEnableReset:public sc_module{
 		sc_in< dataType > x_in;
 		///output data port
 		sc_out< dataType > z_out;
-		
+
 		///constructor
 		SC_CTOR(RegisterEnableReset):\
 		SCU_INIT_PORT_NAME(clk_in),SCU_INIT_PORT_NAME(en_in),SCU_INIT_PORT_NAME(reset_in),SCU_INIT_PORT_NAME(x_in),SCU_INIT_PORT_NAME(z_out)\
@@ -107,13 +108,13 @@ class RegisterEnableReset:public sc_module{
 when enable input equal to 0 and clock equal to 1
 z_out keep the state and when enable input equal to 1 and clock input equal to 1 z_out change to x_in.
 
-@author Ronald Sulbaran
+@author Ronald Sulbarán
 @mail ronalanto03@gmail.com
 @date December 2012
 */
 
 
-///dataType is de DataType of the latch
+///dataType is the data type carried by the cell
 ///if zero=true => this is a Zero Latch
 ///if zero=false => this is a normal latch
 template < typename dataType ,bool zero=false>
@@ -121,7 +122,7 @@ template < typename dataType ,bool zero=false>
 class RegisterEnable:public sc_module{
 	public:
 
-		///Clock port for sincronization
+		///Clock port for synchronization
 		sc_in_clk clk_in;
 		///enable input port
 		sc_in<bool> en_in;
@@ -129,7 +130,7 @@ class RegisterEnable:public sc_module{
 		sc_in< dataType > x_in;
 		///output data port
 		sc_out< dataType > z_out;
-		
+
 		///constructor
 		SC_CTOR(RegisterEnable):\
 		SCU_INIT_PORT_NAME(clk_in),SCU_INIT_PORT_NAME(en_in),SCU_INIT_PORT_NAME(x_in),SCU_INIT_PORT_NAME(z_out)\
@@ -171,34 +172,34 @@ class RegisterEnable:public sc_module{
 
 
 };
-//end class RegisterEnableReset
+//end class RegisterEnable
 
 
 
 
 /**
 @class RegisterReset
-@brief clocked reset with reset input.
-when reset input equal to 1 and clock input equal to 1 DLatchClockedReset change it's state to 0 and x_in input doesnt matter.
+@brief clocked Register with reset input.
+when reset input equal to 1 and clock input equal to 1 RegisterReset change its state to 0 and x_in input does not matter.
 when reset input equal to 0 and clock input equal to 1 z_out change to x_in.
 
-@author Ronald Sulbaran
+@author Ronald Sulbarán
 @date December 2012
 @mail ronalanto03@gmail.com
 */
 
 
 template < typename dataType ,bool zero=false>
-///dataType is de DataType of the latch
+///dataType is the data type carried by the cell
 ///if zero=true => this is a Zero Latch
 ///if zero=false => this is a normal latch
 
 class RegisterReset:public sc_module{
 	public:
 
-		///Clock port for sincronization
+		///Clock port for synchronization
 		sc_in_clk clk_in;
-		///enable input port
+		///reset input port
 		sc_in<bool> reset_in;
 		///input data port
 		sc_in< dataType > x_in;
@@ -257,20 +258,20 @@ class RegisterReset:public sc_module{
 */
 
 template < typename dataType ,bool zero=false>
-///dataType is the DataType of the latch
+///dataType is the data type carried by the cell
 ///if zero=true => this is a Zero Latch
 ///if zero=false => this is a normal latch
 
 class Register:public sc_module{
 	public:
 
-		///Clock port for sincronization
+		///Clock port for synchronization
 		sc_in_clk clk_in;
 		///input data port
 		sc_in< dataType > x_in;
 		///output data port
 		sc_out< dataType > z_out;
-		
+
 		///constructor
 		SC_CTOR(Register):\
 		SCU_INIT_PORT_NAME(clk_in),SCU_INIT_PORT_NAME(x_in),SCU_INIT_PORT_NAME(z_out)\

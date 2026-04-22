@@ -1,7 +1,17 @@
 /**
-@file dLatch.h Usefull Macro's definition
-@brief Macros that help to read the code of tfoss system
-@author Ronald Sulbaran
+@file scuDefines.h
+@brief Internal helper macros and utilities used across the scu library.
+@details Provides:
+         - `SCU_BEGIN_NAMESPACE` / `SCU_END_NAMESPACE` — open/close the
+           library namespace `scu`.
+         - `SCU_INIT_PORT_NAME(port)` — initialise a port with its
+           user-visible name so SystemC kernel diagnostics are readable.
+         - `SCU_REPORT_FATAL(msg)` — report a fatal error via the SystemC
+           reporting API, including the module kind and name.
+         - `scu::intToString(int)` — minimal int-to-string helper used
+           by template-parameter validation.
+
+@author Ronald Sulbarán
 @date December 2012
 @mail ronalanto03@gmail.com
 */

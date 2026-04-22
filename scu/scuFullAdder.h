@@ -1,6 +1,9 @@
 /**
 @file scuFullAdder.h
-@brief Full Adder in low level
+@brief 1-bit full adder built from the scu gate primitives.
+@details Implements:
+         z_out = x_in XOR y_in XOR c_in
+         c_out = (x_in AND (y_in OR c_in)) OR (y_in AND c_in)
 @author Ronald Sulbarán
 @mail ronalanto03@gmail.com
 @date 11/6/2011

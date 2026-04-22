@@ -1,7 +1,7 @@
 /**
 @file scuGates.h
 @brief Description of gates of n inputs.
-@author Ronald Sulbaran
+@author Ronald Sulbarán
 @date December 2012
 @mail ronalanto03@gmail.com
 */
@@ -95,7 +95,7 @@ class And: public sc_module{
 	
 		}
 
-		///provide informaion to report errors
+		///provide information to report errors
 		virtual const char * kind()const{
 			return "And";
 		}
@@ -222,8 +222,8 @@ class Nand: public sc_module{
 
 
 /**
-@class Or
-@brief Or gate of n inputs
+@class Nor
+@brief Nor gate of n inputs
 */
 template< int n=2 >
 class Nor: public sc_module{

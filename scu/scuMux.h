@@ -1,7 +1,7 @@
 /**
-@file scuMux
-@brief Definition of a generic multiplexer
-@author Ronald Sulbaran
+@file scuMux.h
+@brief Generic N-to-1 multiplexer (`Mux<N, NB, DataType>`).
+@author Ronald Sulbarán
 @date December 2012
 @mail ronalanto03@gmail.com
 */
