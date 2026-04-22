@@ -1,0 +1,41 @@
+# ---- Build artifacts ----
+*.o
+*.a
+*.so
+*.dylib
+*.exe
+*.out
+*.lo
+*.la
+*.d
+
+# ---- SystemC simulation outputs ----
+*.vcd
+*.wlf
+*.lxt
+*.lxt2
+*.fst
+*.log
+
+# ---- Default executable names produced by common.mk ----
+Prueba
+sim
+test.sm
+
+# Per-example built binaries live alongside sources, cover common stems:
+scu/moduleTest/**/Prueba
+scu/moduleTest/**/sim
+scu/moduleTest/**/test.sm
+
+# ---- Editor / OS noise ----
+*~
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.iml
+
+# ---- Dependency output ----
+.deps/
